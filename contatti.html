@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contattaci | Ink & Tattoo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo"><h2><i class="fas fa-tint"></i> INK&TATTOO</h2></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="galleria.html">Portfolio</a></li>
+                <li><a href="artisti.html">Artisti</a></li>
+                <li><a href="contatti.html" class="btn-primary">Prenota Ora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header contact-header">
+        <h1>PRENOTA UNA SESSIONE</h1>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-info">
+            <h2>LO STUDIO</h2>
+            <p>Siamo aperti dal Martedì al Sabato. Si riceve preferibilmente su appuntamento per garantire a ogni cliente la massima attenzione.</p>
+            
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Via dell'Arte 45, 20100 Milano (MI)</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <p>+39 02 9876543</p>
+            </div>
+            <div class="info-item">
+                <i class="fab fa-whatsapp"></i>
+                <p>+39 333 1234567 (Solo messaggi)</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>RACCONTACI LA TUA IDEA</h2>
+            <form onsubmit="inviaPrenotazione(event)">
+                <input type="text" placeholder="Il tuo Nome" required>
+                <input type="email" placeholder="La tua Email" required>
+                <select required>
+                    <option value="">Scegli l'Artista</option>
+                    <option value="elena">Elena "Shadow"</option>
+                    <option value="marco">Marco J.</option>
+                    <option value="indifferente">Indifferente / Consigliatemi voi</option>
+                </select>
+                <textarea rows="5" placeholder="Descrivi il tatuaggio (soggetto, dimensioni approssimative, posizione sul corpo)..." required></textarea>
+                <button type="submit" class="btn-primary" style="width: 100%; border:none; font-size: 1.1rem; cursor:pointer;">Invia Richiesta</button>
+            </form>
+        </div>
+    </section>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.375276321204!2d9.1878841!3d45.4623758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6af701b9795%3A0x673c68a9805d21aa!2sPiazza%20del%20Duomo%2C%20Milano%20MI!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+    <footer>
+        <div class="footer-bottom"><p>&copy; 2026 Ink & Tattoo Studio.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
