@@ -404,33 +404,21 @@ h1.hero-title{
 
 .g-img{
   width:100%;height:100%;position:relative;
-  display:flex;align-items:center;justify-content:center;
-  transition:transform .5s cubic-bezier(.4,0,.2,1);
+  background:#0a0518;
+  overflow:hidden;
 }
-.g-item:hover .g-img{transform:scale(1.06)}
-
-/* per-item bg tints */
-.g-item:nth-child(1)  .g-img{background:linear-gradient(145deg,#0e051e 0%,#2a0a5a 60%,#120428 100%)}
-.g-item:nth-child(2)  .g-img{background:linear-gradient(160deg,#0b0420 0%,#1e0848 55%,#080318 100%)}
-.g-item:nth-child(3)  .g-img{background:linear-gradient(130deg,#140625 0%,#3a0f80 55%,#0c0420 100%)}
-.g-item:nth-child(4)  .g-img{background:linear-gradient(150deg,#0f0520 0%,#280a60 50%,#0a0318 100%)}
-.g-item:nth-child(5)  .g-img{background:linear-gradient(135deg,#180830 0%,#4410a0 60%,#0e0420 100%)}
-.g-item:nth-child(6)  .g-img{background:linear-gradient(155deg,#100428 0%,#300c70 55%,#0a0318 100%)}
-.g-item:nth-child(7)  .g-img{background:linear-gradient(140deg,#0d0520 0%,#220868 50%,#090318 100%)}
-.g-item:nth-child(8)  .g-img{background:linear-gradient(148deg,#160728 0%,#3c1090 55%,#0e0522 100%)}
-.g-item:nth-child(9)  .g-img{background:linear-gradient(132deg,#120625 0%,#2e0b70 50%,#0c0420 100%)}
-.g-item:nth-child(10) .g-img{background:linear-gradient(160deg,#0e051e 0%,#3a10a0 55%,#100428 100%)}
-.g-item:nth-child(11) .g-img{background:linear-gradient(140deg,#150630 0%,#490f90 60%,#100422 100%)}
-.g-item:nth-child(12) .g-img{background:linear-gradient(155deg,#0c0420 0%,#250960 50%,#08031a 100%)}
-
-/* svg tattoo art */
-.g-img svg{
-  width:55%;height:55%;max-width:150px;max-height:150px;
-  opacity:.55;transition:opacity .4s,transform .4s;
-  filter:drop-shadow(0 0 8px rgba(169,75,255,.3));
+.g-img img{
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+  opacity:.82;
+  transition:opacity .5s,transform .55s cubic-bezier(.4,0,.2,1);
+  filter:saturate(.7) brightness(.88);
 }
-.g-item.tall .g-img svg,.g-item.wide .g-img svg{max-width:180px;max-height:180px}
-.g-item:hover .g-img svg{opacity:.85;transform:scale(1.08);filter:drop-shadow(0 0 14px rgba(169,75,255,.6))}
+.g-item:hover .g-img img{
+  transform:scale(1.07);
+  opacity:1;
+  filter:saturate(.9) brightness(.95);
+}
 
 .g-overlay{
   position:absolute;inset:0;z-index:2;
@@ -990,337 +978,127 @@ footer::before{
 
   <div class="gallery-grid" id="galleryGrid">
 
-    <!-- 1 — tall, realism: skull -->
+    <!-- 1 — TALL — tattoo session in progress -->
     <div class="g-item tall" data-cat="realism">
       <div class="g-img">
-        <svg viewBox="0 0 100 120" fill="none" stroke="rgba(169,75,255,.75)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 70 Q15 50 18 35 Q22 10 50 8 Q78 10 82 35 Q85 50 80 70 L76 88 Q74 96 68 96 L32 96 Q26 96 24 88 Z"/>
-          <ellipse cx="36" cy="48" rx="10" ry="12"/>
-          <ellipse cx="64" cy="48" rx="10" ry="12"/>
-          <circle cx="36" cy="49" r="5" fill="rgba(169,75,255,.2)"/>
-          <circle cx="64" cy="49" r="5" fill="rgba(169,75,255,.2)"/>
-          <path d="M44 68 Q50 62 56 68"/>
-          <line x1="38" y1="96" x2="38" y2="108"/><line x1="50" y1="96" x2="50" y2="110"/><line x1="62" y1="96" x2="62" y2="108"/>
-          <path d="M30 70 Q50 74 70 70"/>
-          <path d="M25 35 Q28 28 34 26"/><path d="M75 35 Q72 28 66 26"/>
-          <circle cx="50" cy="20" r="3" stroke-dasharray="2 2"/>
-        </svg>
+        <img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=700&h=900&fit=crop&q=85&auto=format"
+             alt="Sessione di tatuaggio in corso" loading="lazy"
+             onerror="this.style.display='none'">
       </div>
-      <div class="g-overlay"><div class="g-label"><span class="g-tag">Realism</span><span class="g-name">Dark Skull</span><span class="g-artist">Marco Rossi</span></div></div>
+      <div class="g-overlay"><div class="g-label"><span class="g-tag">Realism</span><span class="g-name">In the Making</span><span class="g-artist">Marco Rossi</span></div></div>
     </div>
 
-    <!-- 2 — blackwork: mandala -->
+    <!-- 2 — blackwork sleeve -->
     <div class="g-item" data-cat="blackwork">
       <div class="g-img">
-        <svg viewBox="0 0 100 100" fill="none" stroke="rgba(169,75,255,.7)" stroke-width="0.9">
-          <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="36"/><circle cx="50" cy="50" r="28"/>
-          <circle cx="50" cy="50" r="18"/><circle cx="50" cy="50" r="8"/>
-          <g stroke-width="0.7">
-            <line x1="50" y1="6" x2="50" y2="94"/><line x1="6" y1="50" x2="94" y2="50"/>
-            <line x1="19" y1="19" x2="81" y2="81"/><line x1="81" y1="19" x2="19" y2="81"/>
-          </g>
-          <g stroke-width="0.6" stroke-dasharray="3 2">
-            <line x1="50" y1="6" x2="81" y2="19"/><line x1="94" y1="50" x2="81" y2="81"/>
-            <line x1="50" y1="94" x2="19" y2="81"/><line x1="6" y1="50" x2="19" y2="19"/>
-          </g>
-          <circle cx="50" cy="14" r="3" fill="rgba(169,75,255,.3)"/>
-          <circle cx="86" cy="50" r="3" fill="rgba(169,75,255,.3)"/>
-          <circle cx="50" cy="86" r="3" fill="rgba(169,75,255,.3)"/>
-          <circle cx="14" cy="50" r="3" fill="rgba(169,75,255,.3)"/>
-          <polygon points="50,32 54,44 50,42 46,44" fill="rgba(169,75,255,.15)"/>
-          <polygon points="50,68 54,56 50,58 46,56" fill="rgba(169,75,255,.15)"/>
-        </svg>
+        <img src="https://images.unsplash.com/photo-1605647533135-51b5906087d0?w=600&h=400&fit=crop&q=85&auto=format"
+             alt="Sleeve tattoo blackwork" loading="lazy"
+             onerror="this.style.display='none'">
       </div>
-      <div class="g-overlay"><div class="g-label"><span class="g-tag">Blackwork</span><span class="g-name">Sacred Mandala</span><span class="g-artist">Luca Martini</span></div></div>
+      <div class="g-overlay"><div class="g-label"><span class="g-tag">Blackwork</span><span class="g-name">Full Sleeve</span><span class="g-artist">Luca Martini</span></div></div>
     </div>
 
-    <!-- 3 — japanese: koi -->
+    <!-- 3 — japanese arm -->
     <div class="g-item" data-cat="japanese">
       <div class="g-img">
-        <svg viewBox="0 0 80 110" fill="none" stroke="rgba(169,75,255,.75)" stroke-width="1.1" stroke-linecap="round">
-          <path d="M40 10 Q55 25 58 50 Q58 75 40 95 Q22 75 22 50 Q22 25 40 10Z"/>
-          <path d="M40 10 Q30 0 18 5 Q28 18 40 20"/>
-          <path d="M40 10 Q50 0 62 5 Q52 18 40 20"/>
-          <ellipse cx="32" cy="40" rx="5" ry="7"/>
-          <circle cx="32" cy="40" r="2.5" fill="rgba(169,75,255,.3)"/>
-          <path d="M30 55 Q40 52 50 55"/>
-          <path d="M28 62 Q40 58 52 62"/>
-          <path d="M30 69 Q40 66 50 69"/>
-          <path d="M34 76 Q40 74 46 76"/>
-          <path d="M40 95 Q32 105 25 108"/><path d="M40 95 Q48 105 55 108"/>
-          <circle cx="34" cy="30" r="1.5" fill="rgba(169,75,255,.5)"/>
-          <circle cx="46" cy="33" r="1.5" fill="rgba(169,75,255,.5)"/>
-          <circle cx="42" cy="44" r="1.5" fill="rgba(169,75,255,.5)"/>
-        </svg>
+        <img src="https://images.unsplash.com/photo-1662524518420-bbded8ec7811?w=600&h=400&fit=crop&q=85&auto=format"
+             alt="Japanese arm tattoo" loading="lazy"
+             onerror="this.style.display='none'">
       </div>
-      <div class="g-overlay"><div class="g-label"><span class="g-tag">Japanese</span><span class="g-name">Koi Dragon</span><span class="g-artist">Elena Ferrari</span></div></div>
+      <div class="g-overlay"><div class="g-label"><span class="g-tag">Japanese</span><span class="g-name">Dragon Sleeve</span><span class="g-artist">Elena Ferrari</span></div></div>
     </div>
 
-    <!-- 4 — fineline: botanical -->
+    <!-- 4 — fine line -->
     <div class="g-item" data-cat="fineline">
       <div class="g-img">
-        <svg viewBox="0 0 80 100" fill="none" stroke="rgba(169,75,255,.65)" stroke-width="0.9" stroke-linecap="round">
-          <line x1="40" y1="95" x2="40" y2="15"/>
-          <path d="M40 70 Q22 58 18 44 Q24 40 32 50 Q36 62 40 70"/>
-          <path d="M40 70 Q58 58 62 44 Q56 40 48 50 Q44 62 40 70"/>
-          <path d="M40 55 Q24 44 22 30 Q28 26 36 38 Q38 46 40 55"/>
-          <path d="M40 55 Q56 44 58 30 Q52 26 44 38 Q42 46 40 55"/>
-          <path d="M40 40 Q28 32 26 20 Q32 16 38 28"/>
-          <path d="M40 40 Q52 32 54 20 Q48 16 42 28"/>
-          <circle cx="40" cy="15" r="4"/>
-          <path d="M37 12 Q40 6 43 12"/>
-          <circle cx="40" cy="15" r="1.5" fill="rgba(169,75,255,.4)"/>
-        </svg>
+        <img src="https://images.unsplash.com/photo-1665085326630-b01fea9a613d?w=600&h=400&fit=crop&q=85&auto=format"
+             alt="Fine line tattoo" loading="lazy"
+             onerror="this.style.display='none'">
       </div>
-      <div class="g-overlay"><div class="g-label"><span class="g-tag">Fine Line</span><span class="g-name">Dark Botanical</span><span class="g-artist">Sara Conti</span></div></div>
+      <div class="g-overlay"><div class="g-label"><span class="g-tag">Fine Line</span><span class="g-name">Minimal Flora</span><span class="g-artist">Sara Conti</span></div></div>
     </div>
 
-    <!-- 5 — wide, blackwork: geometric wolf -->
-    <div class="g-item wide" data-cat="blackwork">
+    <!-- 5 — WIDE — realism torso -->
+    <div class="g-item wide" data-cat="realism">
       <div class="g-img">
-        <svg viewBox="0 0 160 100" fill="none" stroke="rgba(169,75,255,.72)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
-          <!-- geometric wolf head -->
-          <polygon points="80,10 105,30 115,55 100,75 80,80 60,75 45,55 55,30"/>
-          <polygon points="80,20 98,35 105,55 90,68 80,72 70,68 55,55 62,35"/>
-          <!-- eyes -->
-          <polygon points="68,42 74,36 80,42 74,48"/>
-          <polygon points="92,42 86,36 80,42 86,48"/>
-          <circle cx="74" cy="42" r="2.5" fill="rgba(169,75,255,.35)"/>
-          <circle cx="86" cy="42" r="2.5" fill="rgba(169,75,255,.35)"/>
-          <!-- nose -->
-          <polygon points="80,56 76,62 84,62"/>
-          <!-- ears -->
-          <polygon points="55,30 48,10 65,25"/>
-          <polygon points="105,30 112,10 95,25"/>
-          <!-- inner ear -->
-          <polygon points="57,26 52,14 63,23" stroke-width=".7" opacity=".6"/>
-          <polygon points="103,26 108,14 97,23" stroke-width=".7" opacity=".6"/>
-          <!-- geometric lines -->
-          <line x1="45" y1="55" x2="20" y2="70" stroke-width=".7" opacity=".5"/>
-          <line x1="115" y1="55" x2="140" y2="70" stroke-width=".7" opacity=".5"/>
-          <line x1="80" y1="80" x2="80" y2="98" stroke-width=".7" opacity=".5"/>
-          <polygon points="80,10 105,30 80,40 55,30" fill="rgba(169,75,255,.05)"/>
-        </svg>
+        <img src="https://images.unsplash.com/photo-1632873816056-b66c011ca3d3?w=1000&h=500&fit=crop&q=85&auto=format"
+             alt="Tatuaggio realistico" loading="lazy"
+             onerror="this.style.display='none'">
       </div>
-      <div class="g-overlay"><div class="g-label"><span class="g-tag">Blackwork</span><span class="g-name">Geometric Wolf</span><span class="g-artist">Luca Martini</span></div></div>
+      <div class="g-overlay"><div class="g-label"><span class="g-tag">Realism</span><span class="g-name">Dark Portrait</span><span class="g-artist">Marco Rossi</span></div></div>
     </div>
 
-    <!-- 6 — japanese: hannya -->
+    <!-- 6 — blackwork geometric -->
+    <div class="g-item" data-cat="blackwork">
+      <div class="g-img">
+        <img src="https://images.unsplash.com/photo-1655960556432-b74f6ff0a54b?w=600&h=400&fit=crop&q=85&auto=format"
+             alt="Blackwork geometric tattoo" loading="lazy"
+             onerror="this.style.display='none'">
+      </div>
+      <div class="g-overlay"><div class="g-label"><span class="g-tag">Blackwork</span><span class="g-name">Geometric Study</span><span class="g-artist">Luca Martini</span></div></div>
+    </div>
+
+    <!-- 7 — japanese mask -->
     <div class="g-item" data-cat="japanese">
       <div class="g-img">
-        <svg viewBox="0 0 90 110" fill="none" stroke="rgba(169,75,255,.73)" stroke-width="1.1" stroke-linecap="round">
-          <path d="M15 55 Q12 30 25 15 Q38 5 45 5 Q52 5 65 15 Q78 30 75 55 Q72 75 62 85 Q55 92 45 92 Q35 92 28 85 Q18 75 15 55Z"/>
-          <!-- brow ridges -->
-          <path d="M18 38 Q28 28 38 33"/><path d="M72 38 Q62 28 52 33"/>
-          <!-- eyes - demonic -->
-          <ellipse cx="32" cy="46" rx="9" ry="7"/>
-          <ellipse cx="58" cy="46" rx="9" ry="7"/>
-          <circle cx="32" cy="46" r="4.5" fill="rgba(169,75,255,.25)"/>
-          <circle cx="58" cy="46" r="4.5" fill="rgba(169,75,255,.25)"/>
-          <circle cx="32" cy="46" r="2" fill="rgba(169,75,255,.5)"/>
-          <circle cx="58" cy="46" r="2" fill="rgba(169,75,255,.5)"/>
-          <!-- nose -->
-          <path d="M40 58 Q45 55 50 58"/><path d="M38 62 Q45 66 52 62"/>
-          <!-- mouth fangs -->
-          <path d="M22 72 Q30 80 38 76 Q45 72 52 76 Q60 80 68 72"/>
-          <line x1="33" y1="76" x2="30" y2="88"/><line x1="45" y1="73" x2="45" y2="88"/>
-          <line x1="57" y1="76" x2="60" y2="88"/>
-          <!-- horns -->
-          <path d="M25 15 Q20 5 28 2 Q34 8 30 18"/>
-          <path d="M65 15 Q70 5 62 2 Q56 8 60 18"/>
-          <!-- cheek marks -->
-          <path d="M15 55 Q8 52 6 45" stroke-dasharray="2 2" opacity=".6"/>
-          <path d="M75 55 Q82 52 84 45" stroke-dasharray="2 2" opacity=".6"/>
-        </svg>
+        <img src="https://images.unsplash.com/photo-1665085327443-44e6dddbcfc0?w=600&h=400&fit=crop&q=85&auto=format"
+             alt="Japanese tattoo mask" loading="lazy"
+             onerror="this.style.display='none'">
       </div>
       <div class="g-overlay"><div class="g-label"><span class="g-tag">Japanese</span><span class="g-name">Hannya Mask</span><span class="g-artist">Elena Ferrari</span></div></div>
     </div>
 
-    <!-- 7 — fineline: moon phases -->
-    <div class="g-item" data-cat="fineline">
-      <div class="g-img">
-        <svg viewBox="0 0 140 60" fill="none" stroke="rgba(169,75,255,.68)" stroke-width="0.9">
-          <circle cx="20" cy="30" r="16"/>
-          <circle cx="52" cy="30" r="16"/><path d="M42 16 Q58 30 42 44" fill="rgba(10,4,20,.9)" stroke="none"/><path d="M42 16 Q58 30 42 44" stroke-width=".8"/>
-          <circle cx="84" cy="30" r="16"/><path d="M74 14 Q98 30 74 46" fill="rgba(10,4,20,.9)" stroke="none"/><path d="M74 14 Q98 30 74 46" stroke-width=".8"/>
-          <circle cx="116" cy="30" r="16"/><path d="M100 14 Q122 30 100 46" fill="rgba(10,4,20,.9)" stroke="none"/>
-          <circle cx="20" cy="30" r="10" fill="rgba(169,75,255,.07)"/>
-          <line x1="36" y1="30" x2="48" y2="30" stroke-width=".6" opacity=".4"/>
-          <line x1="68" y1="30" x2="100" y2="30" stroke-width=".6" opacity=".4"/>
-          <line x1="100" y1="30" x2="100" y2="30" stroke-width=".6" opacity=".4"/>
-        </svg>
-      </div>
-      <div class="g-overlay"><div class="g-label"><span class="g-tag">Fine Line</span><span class="g-name">Moon Phases</span><span class="g-artist">Sara Conti</span></div></div>
-    </div>
-
-    <!-- 8 — tall, realism: snake rose -->
+    <!-- 8 — TALL — studio atmosphere -->
     <div class="g-item tall" data-cat="realism">
       <div class="g-img">
-        <svg viewBox="0 0 80 130" fill="none" stroke="rgba(169,75,255,.73)" stroke-width="1.1" stroke-linecap="round">
-          <!-- rose -->
-          <circle cx="40" cy="30" r="18"/>
-          <path d="M28 22 Q40 14 52 22 Q56 30 52 38 Q40 46 28 38 Q24 30 28 22Z"/>
-          <path d="M32 18 Q40 10 48 18 Q52 26 46 33 Q40 38 34 33 Q28 26 32 18Z"/>
-          <path d="M36 16 Q40 8 44 16 Q47 22 44 28 Q40 32 36 28 Q33 22 36 16Z"/>
-          <circle cx="40" cy="24" r="5" fill="rgba(169,75,255,.15)"/>
-          <!-- petals outer -->
-          <path d="M22 30 Q14 22 18 14 Q28 20 26 30"/>
-          <path d="M58 30 Q66 22 62 14 Q52 20 54 30"/>
-          <path d="M40 48 Q32 56 36 64 Q46 58 48 48"/>
-          <!-- stem -->
-          <path d="M40 48 Q38 65 35 75 Q32 85 36 95 Q40 105 38 118"/>
-          <!-- thorns -->
-          <path d="M37 65 Q30 60 28 54"/><path d="M36 80 Q44 76 46 70"/>
-          <!-- leaves -->
-          <path d="M35 75 Q20 68 18 55 Q28 60 35 75"/>
-          <path d="M36 90 Q50 84 52 72 Q42 78 36 90"/>
-          <!-- snake body -->
-          <path d="M38 118 Q28 125 22 120 Q18 112 26 108 Q36 106 38 98"/>
-          <!-- snake head -->
-          <ellipse cx="20" cy="118" rx="8" ry="5" transform="rotate(-20,20,118)"/>
-          <circle cx="17" cy="115" r="1.5" fill="rgba(169,75,255,.5)"/>
-          <path d="M14 120 Q12 122 10 121 M14 120 Q12 123 11 125"/>
-        </svg>
+        <img src="https://images.unsplash.com/photo-1671750145942-da9fed292290?w=700&h=900&fit=crop&q=85&auto=format"
+             alt="Tattoo studio" loading="lazy"
+             onerror="this.style.display='none'">
       </div>
-      <div class="g-overlay"><div class="g-label"><span class="g-tag">Realism</span><span class="g-name">Snake & Rose</span><span class="g-artist">Marco Rossi</span></div></div>
+      <div class="g-overlay"><div class="g-label"><span class="g-tag">Studio</span><span class="g-name">Behind the Scenes</span><span class="g-artist">Ink&Tattoo</span></div></div>
     </div>
 
-    <!-- 9 — blackwork: dotwork compass -->
+    <!-- 9 — fineline detail -->
+    <div class="g-item" data-cat="fineline">
+      <div class="g-img">
+        <img src="https://images.unsplash.com/photo-1724343163782-52276ca2e6c2?w=600&h=400&fit=crop&q=85&auto=format"
+             alt="Fine line tattoo detail" loading="lazy"
+             onerror="this.style.display='none'">
+      </div>
+      <div class="g-overlay"><div class="g-label"><span class="g-tag">Fine Line</span><span class="g-name">Celestial Ink</span><span class="g-artist">Sara Conti</span></div></div>
+    </div>
+
+    <!-- 10 — blackwork dotwork -->
     <div class="g-item" data-cat="blackwork">
       <div class="g-img">
-        <svg viewBox="0 0 100 100" fill="none" stroke="rgba(169,75,255,.7)" stroke-width="0.9">
-          <circle cx="50" cy="50" r="44" stroke-dasharray="4 3"/>
-          <circle cx="50" cy="50" r="36"/>
-          <circle cx="50" cy="50" r="6" fill="rgba(169,75,255,.2)"/>
-          <!-- compass points -->
-          <polygon points="50,8 54,40 50,44 46,40" fill="rgba(169,75,255,.15)"/>
-          <polygon points="50,92 54,60 50,56 46,60" fill="rgba(169,75,255,.08)"/>
-          <polygon points="8,50 40,46 44,50 40,54" fill="rgba(169,75,255,.08)"/>
-          <polygon points="92,50 60,46 56,50 60,54" fill="rgba(169,75,255,.08)"/>
-          <!-- diagonal points smaller -->
-          <polygon points="21,21 42,44 44,42 23,19"/>
-          <polygon points="79,21 58,44 56,42 77,19"/>
-          <polygon points="21,79 42,56 44,58 23,81"/>
-          <polygon points="79,79 58,56 56,58 77,81"/>
-          <!-- N S E W -->
-          <text x="47" y="6" font-size="6" fill="rgba(169,75,255,.6)" font-family="monospace">N</text>
-          <text x="47" y="100" font-size="6" fill="rgba(169,75,255,.4)" font-family="monospace">S</text>
-          <text x="3" y="53" font-size="6" fill="rgba(169,75,255,.4)" font-family="monospace">W</text>
-          <text x="93" y="53" font-size="6" fill="rgba(169,75,255,.4)" font-family="monospace">E</text>
-          <!-- tick marks -->
-          <g stroke-width=".6" opacity=".4">
-            <line x1="50" y1="14" x2="50" y2="18"/><line x1="50" y1="82" x2="50" y2="86"/>
-            <line x1="14" y1="50" x2="18" y2="50"/><line x1="82" y1="50" x2="86" y2="50"/>
-          </g>
-        </svg>
+        <img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?w=600&h=400&fit=crop&q=85&auto=format"
+             alt="Dotwork tattoo" loading="lazy"
+             onerror="this.style.display='none'">
       </div>
       <div class="g-overlay"><div class="g-label"><span class="g-tag">Blackwork</span><span class="g-name">Dotwork Compass</span><span class="g-artist">Luca Martini</span></div></div>
     </div>
 
-    <!-- 10 — japanese: phoenix -->
-    <div class="g-item" data-cat="japanese">
+    <!-- 11 — WIDE — japanese back -->
+    <div class="g-item wide" data-cat="japanese">
       <div class="g-img">
-        <svg viewBox="0 0 100 110" fill="none" stroke="rgba(169,75,255,.72)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
-          <!-- body -->
-          <path d="M50 50 Q42 40 40 28 Q46 22 52 28 Q58 38 50 50Z" fill="rgba(169,75,255,.1)"/>
-          <!-- wings -->
-          <path d="M50 50 Q30 38 12 42 Q16 52 28 54 Q38 52 50 50"/>
-          <path d="M50 50 Q70 38 88 42 Q84 52 72 54 Q62 52 50 50"/>
-          <path d="M12 42 Q8 32 16 26 Q22 32 28 54"/>
-          <path d="M88 42 Q92 32 84 26 Q78 32 72 54"/>
-          <!-- wing feathers -->
-          <path d="M30 46 Q26 38 20 36"/><path d="M24 50 Q18 44 12 44"/>
-          <path d="M70 46 Q74 38 80 36"/><path d="M76 50 Q82 44 88 44"/>
-          <!-- head -->
-          <circle cx="50" cy="22" r="10"/>
-          <circle cx="46" cy="19" r="2.5" fill="rgba(169,75,255,.4)"/>
-          <!-- beak -->
-          <path d="M58 22 L65 20 L62 24Z" fill="rgba(169,75,255,.2)"/>
-          <!-- crest -->
-          <path d="M44 12 Q46 5 50 8"/><path d="M50 8 Q54 2 56 8"/>
-          <path d="M56 8 Q60 4 60 10"/>
-          <!-- tail -->
-          <path d="M50 50 Q44 65 36 72 Q38 80 46 78 Q50 68 50 50"/>
-          <path d="M50 50 Q56 65 64 72 Q62 80 54 78 Q50 68 50 50"/>
-          <path d="M50 50 Q46 70 42 82"/><path d="M50 50 Q54 70 58 82"/>
-          <path d="M50 50 Q48 72 46 88"/><path d="M50 50 Q52 72 54 88"/>
-        </svg>
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&h=500&fit=crop&q=85&auto=format"
+             alt="Japanese back tattoo" loading="lazy"
+             onerror="this.style.display='none'">
       </div>
-      <div class="g-overlay"><div class="g-label"><span class="g-tag">Japanese</span><span class="g-name">Phoenix Rising</span><span class="g-artist">Elena Ferrari</span></div></div>
+      <div class="g-overlay"><div class="g-label"><span class="g-tag">Japanese</span><span class="g-name">Phoenix Back-piece</span><span class="g-artist">Elena Ferrari</span></div></div>
     </div>
 
-    <!-- 11 — fineline: celestial eye -->
-    <div class="g-item" data-cat="fineline">
+    <!-- 12 — realism portrait -->
+    <div class="g-item" data-cat="realism">
       <div class="g-img">
-        <svg viewBox="0 0 100 80" fill="none" stroke="rgba(169,75,255,.68)" stroke-width="0.9" stroke-linecap="round">
-          <!-- eye outline -->
-          <path d="M10 40 Q30 15 50 15 Q70 15 90 40 Q70 65 50 65 Q30 65 10 40Z"/>
-          <circle cx="50" cy="40" r="14" fill="rgba(169,75,255,.08)"/>
-          <circle cx="50" cy="40" r="9"/>
-          <circle cx="50" cy="40" r="4.5" fill="rgba(169,75,255,.2)"/>
-          <!-- iris detail lines -->
-          <line x1="50" y1="27" x2="50" y2="53" stroke-width=".5" opacity=".5"/>
-          <line x1="37" y1="33" x2="63" y2="47" stroke-width=".5" opacity=".5"/>
-          <line x1="37" y1="47" x2="63" y2="33" stroke-width=".5" opacity=".5"/>
-          <!-- lashes top -->
-          <line x1="30" y1="22" x2="26" y2="15"/><line x1="40" y1="17" x2="38" y2="9"/>
-          <line x1="50" y1="15" x2="50" y2="7"/><line x1="60" y1="17" x2="62" y2="9"/>
-          <line x1="70" y1="22" x2="74" y2="15"/>
-          <!-- lashes bottom -->
-          <line x1="32" y1="56" x2="28" y2="63"/><line x1="42" y1="62" x2="40" y2="70"/>
-          <line x1="50" y1="65" x2="50" y2="73"/><line x1="58" y1="62" x2="60" y2="70"/>
-          <line x1="68" y1="56" x2="72" y2="63"/>
-          <!-- stars -->
-          <circle cx="18" cy="25" r="1.5" fill="rgba(169,75,255,.5)"/>
-          <circle cx="82" cy="25" r="1.5" fill="rgba(169,75,255,.5)"/>
-          <circle cx="50" cy="8" r="1" fill="rgba(169,75,255,.4)"/>
-        </svg>
+        <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?w=600&h=400&fit=crop&q=85&auto=format"
+             alt="Realistic tattoo portrait" loading="lazy"
+             onerror="this.style.display='none'">
       </div>
-      <div class="g-overlay"><div class="g-label"><span class="g-tag">Fine Line</span><span class="g-name">Celestial Eye</span><span class="g-artist">Sara Conti</span></div></div>
+      <div class="g-overlay"><div class="g-label"><span class="g-tag">Realism</span><span class="g-name">Wildlife Portrait</span><span class="g-artist">Marco Rossi</span></div></div>
     </div>
 
-    <!-- 12 — wide, realism: tiger -->
-    <div class="g-item wide" data-cat="realism">
-      <div class="g-img">
-        <svg viewBox="0 0 160 90" fill="none" stroke="rgba(169,75,255,.73)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
-          <!-- head shape -->
-          <path d="M55 20 Q60 10 80 8 Q100 10 105 20 Q114 32 112 50 Q108 68 80 75 Q52 68 48 50 Q46 32 55 20Z"/>
-          <!-- ears -->
-          <path d="M55 20 Q52 8 58 4 Q64 10 62 22"/>
-          <path d="M105 20 Q108 8 102 4 Q96 10 98 22"/>
-          <path d="M57 17 Q55 8 59 5 Q63 9 61 19" stroke-width=".7" opacity=".6"/>
-          <path d="M103 17 Q105 8 101 5 Q97 9 99 19" stroke-width=".7" opacity=".6"/>
-          <!-- eyes -->
-          <ellipse cx="68" cy="38" rx="10" ry="8"/>
-          <ellipse cx="92" cy="38" rx="10" ry="8"/>
-          <ellipse cx="68" cy="38" rx="3" ry="7" fill="rgba(169,75,255,.3)"/>
-          <ellipse cx="92" cy="38" rx="3" ry="7" fill="rgba(169,75,255,.3)"/>
-          <!-- nose -->
-          <path d="M75 52 Q80 48 85 52"/>
-          <path d="M76 54 Q80 58 84 54"/>
-          <!-- mouth -->
-          <path d="M68 62 Q74 68 80 65 Q86 68 92 62"/>
-          <!-- tiger stripes -->
-          <path d="M56 28 Q50 24 46 28" stroke-width="2" opacity=".4"/>
-          <path d="M56 36 Q48 34 44 38" stroke-width="2" opacity=".4"/>
-          <path d="M56 44 Q50 44 46 50" stroke-width="2" opacity=".4"/>
-          <path d="M104 28 Q110 24 114 28" stroke-width="2" opacity=".4"/>
-          <path d="M104 36 Q112 34 116 38" stroke-width="2" opacity=".4"/>
-          <path d="M104 44 Q110 44 114 50" stroke-width="2" opacity=".4"/>
-          <!-- forehead mark -->
-          <path d="M74 18 Q80 12 86 18" stroke-width=".8" opacity=".5"/>
-          <path d="M76 24 Q80 20 84 24" stroke-width=".8" opacity=".5"/>
-          <!-- whisker dots -->
-          <circle cx="65" cy="58" r="1.2" fill="rgba(169,75,255,.5)"/>
-          <circle cx="72" cy="60" r="1.2" fill="rgba(169,75,255,.5)"/>
-          <circle cx="88" cy="60" r="1.2" fill="rgba(169,75,255,.5)"/>
-          <circle cx="95" cy="58" r="1.2" fill="rgba(169,75,255,.5)"/>
-        </svg>
-      </div>
-      <div class="g-overlay"><div class="g-label"><span class="g-tag">Realism</span><span class="g-name">Tiger Portrait</span><span class="g-artist">Marco Rossi</span></div></div>
-    </div>
-
-  </div>
+  </div><!-- end gallery-grid -->
 </section>
 
 <div class="glow-divider"></div>
